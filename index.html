@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects">
+  <meta property="og:title" content="OnlineSplatter"/>
+  <meta property="og:description" content="OnlineSplatter"/>
+  <meta property="og:url" content="https://markhh.com/OnlineSplatter"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/image/logo3.png" /> -->
+  <!-- <meta property="og:image:width" content="600"/> -->
+  <!-- <meta property="og:image:height" content="600"/> -->
+
+
+  <meta name="twitter:title" content="OnlineSplatter">
+  <meta name="twitter:description" content="Pose-Free Online 3D Reconstruction for Free-Moving Objects">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/image/logo3.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="OnlineSplatter, 3D object reconstruction, free-moving object, online, feed-forward, object-centric, 3D Gaussian">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>OnlineSplatter</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/image/logo3.png"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title" style="margin-bottom:0rem">OnlineSplatter: </h1>
+            <h1 class="title is-3 publication-title">Pose-Free Online 3D Reconstruction for Free-Moving Objects</h1>
+            <!-- <div class="is-size-4 publication-authors" style="margin-bottom: 1rem;">NeurIPS 2025 (<span style="color: rgb(32, 0, 8); font-weight: bold;">Spotlight</span>), San Diego, USA</div> -->
+
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://markhh.com/" target="_blank" rel="noopener noreferrer">Mark He Huang</a><sup>1,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://lingeng.foo/" target="_blank" rel="noopener noreferrer">Lin Geng Foo</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://people.mpi-inf.mpg.de/~theobalt/" target="_blank" rel="noopener noreferrer">Christian Theobalt</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://research.a-star.edu.sg/researcher/ying-sun/" target="_blank" rel="noopener noreferrer">Ying Sun</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.sutd.edu.sg/profile/soh-de-wen/" target="_blank" rel="noopener noreferrer">De Wen Soh</a><sup>1</sup>,
+              </span> 
+            </div>
+
+            <div class="is-size-5 publication-authors" style="margin: 5px 5px;">
+              <a href="https://www.sutd.edu.sg/" target="_blank" rel="noopener noreferrer">
+                <img src="static/image/sutd-logo.svg" style="margin-right: 30px; padding-top: 10px;" alt="SUTD" width="110" height="100">
+              </a>
+              <a href="https://www.mpi-inf.mpg.de/departments/visual-computing-and-artificial-intelligence" target="_blank" rel="noopener noreferrer">
+                <img src="static/image/mpi-logo-en.svg" style="margin-right: 30px;" alt="Max Planck Institute for Informatics" width="220" height="20">
+              </a>
+              <a href="https://www.a-star.edu.sg/cfar" target="_blank" rel="noopener noreferrer">
+                <img src="static/image/astar-logo.png" alt="A*STAR" width="120" height="100">
+              </a>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>SUTD</span>,
+              <span class="author-block"><sup>2</sup>Max Planck Institute for Informatics</span>,
+              <span class="author-block"><sup>3</sup>A*STAR</span>
+            </div>
+
+            <div class="is-size-4 publication-authors" style="margin-top: 15px;">
+              <span class="author-block">
+                NeurIPS 2025 (<span style="color: rgb(32, 0, 8); font-weight: bold;">Spotlight</span>)
+              </span>
+            </div>
+
+	   
+		  
+            <br>
+                <!-- ArXiv abstract Link -->
+                <span class="link-block deactivated">
+                  <a href="https://github.com/MarkHershey/OnlineSplatter" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/MarkHershey/OnlineSplatter" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+			  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay muted loop height="100%">
+        <source src="./static/video/demo_compressed.mp4"
+        type="video/mp4">
+      </video>  -->
+      <img src="static/image/Fig1.jpg" width="100%" alt="Teaser Image" />
+      <br>
+      <div class="notification is-centered is-info is-rounded" style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #d8fdfd;">
+        <h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: <em>OnlineSplatter</em> leverage a latent state (object memory) to achieve bounded memory and compute cost for online (causal) 3D reconstruction for freely moving object using only RGB frames in a feed-forward manner.</h6>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+        <p>
+          Free-moving object reconstruction from monocular video remains challenging, particularly without reliable pose or depth cues and under arbitrary object motion. We introduce <em>OnlineSplatter</em>, a novel online feed-forward framework generating high-quality, object-centric 3D Gaussians directly from RGB frames without requiring camera pose, depth priors, or bundle optimization. Our approach anchors reconstruction using the first frame and progressively refines the object representation through a dense Gaussian primitive field, maintaining constant computational cost regardless of video sequence length.
+          Our core contribution is a dual-key memory module combining latent appearance-geometry keys with explicit directional keys, robustly fusing current frame features with temporally aggregated object states. This design enables effective handling of free-moving objects via spatial-guided memory readout and an efficient sparsification mechanism, ensuring comprehensive yet compact object coverage.
+          Evaluations on real-world datasets demonstrate that <em>OnlineSplatter</em> significantly outperforms state-of-the-art pose-free reconstruction baselines, consistently improving with more observations while maintaining constant memory and runtime.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">OnlineSplatter Framework</h2>
+        <hr>
+        <div class="content has-text-justified">          
+            <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/image/Fig2.jpg" width="100%" alt="model" />
+            </div>
+            </div>
+            <p>
+              <!-- To facilitate self-supervised learning, RayZer model is built with <b>minimal 3D inductive bias</b>, motivated by self-supervised large models in other modalities.  RayZer's three main components, including camera estimator, scene reconstructor, and renderer, are plain <b> Transformers with self-attention </b>. The only 3D prior incorporated is the <b>ray structure</b>, which simultaneously models the relationship between camera, pixels (image), and scene.
+              (<b>Left</b>) RayZer first estimates camera parameters, where the middle view is selected as the canonical reference view (in \( \textcolor{#44B3E1}{blue} \) box). 
+              RayZer predicts the intrinsics and the relative camera poses \( \mathcal{P} \) of all views. The camera poses are in <b>low-dimensional</b> \( SE(3) \), helping disentangling cameras and scene. 
+              The predicted cameras are then converted into pixel-aligned Plücker ray maps \( \mathcal{R} \). 
+              (<b>Middle</b>) RayZer uses the subset of input images, \( \mathcal{I}_\textcolor{#47D45A}{\mathcal{A}} \), as well as their previously predicted camera Plücker ray maps, \( \mathcal{R}_\textcolor{#47D45A}{\mathcal{A}} \), to predict a latent \( \textcolor{#47D45A}{\text{scene}} \) representation. 
+              Here, the Plücker ray maps, \( \mathcal{R}_\textcolor{#47D45A}{\mathcal{A}} \), serve as an effective condition for scene reconstruction by providing <b>fine-grained</b> ray-level information.
+              (<b>Right</b>) RayZer render a target image given the scene representation \( \mathbf{z}^{*} \) and a target camera. 
+              During training, we use \( \mathcal{R}_\textcolor{#E97132}{\mathcal{B}} \), which is the previously predicted cameras Plücker ray maps of \( \mathcal{I}_\textcolor{#E97132}{\mathcal{B}} \), to render \( \hat{\mathcal{I}}_\textcolor{#E97132}{\mathcal{B}} \). 
+              This allows training RayZer end-to-end with self-supervised photometric losses. -->
+
+              Overview of <em>OnlineSplatter</em> Pipeline. The input to our framework consists of a stream of RGB images \(\{V_t\}_{t=0}^N\), where object masks \(\{M_t\}_{t=0}^N\) are generated and applied to remove background on-the-fly using an off-the-shelf online video segmentation (OVS) module running alongside our framework.
+    At each timestep \(t\), <em>OnlineSplatter</em> processes the input frame \(V_t\) by first patchifying it into patch tokens. These tokens are then fed into a transformer-based architecture, which directly reasons and outputs pixel-aligned 3D Gaussian representations in a canonical space. Central to our method is object memory, an implicit module based on cross-attention, which is queried and updated at every timestep. This memory enables the incremental reconstruction of the object, consistently refining the object representation (\(\mathbf{G}_{obj,t}^{4N}\)) as new observations arrive in a fully feed-forward manner.
+              </p>  
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+      <div class="column is-four-fifths"> 
+        <h2 class="title is-3">Comparison with 3D Supervised Counterparts</h2>
+        <hr>
+        <div class="content has-text-justified">
+            <p>
+				      <b>Experiment setting</b>: To properly evaluate our online object reconstruction framework, we need to assess how well it performs at different stages of observation accumulation. This is crucial because real-world applications often require reliable reconstruction even with limited initial observations. We therefore design a stage-wise evaluation protocol that examines performance across three distinct phases:
+              <b>1) Early Stage</b> (\(\mathcal{T}_{\text{early}} := \{1 \leq t \leq 4\}\)): Tests the model's ability to quickly establish an initial object representation with minimal observations;
+              <b>2) Mid Stage</b> (\(\mathcal{T}_{\text{mid}} := \{5 \leq t \leq 10\}\)): Evaluates how well the model refines its reconstruction as more views become available;
+              <b>3) Late Stage</b> (\(\mathcal{T}_{\text{late}} := \{11 \leq t \leq T\}\)): Assesses the model's capability to maintain and improve reconstruction quality with extended observation sequences.
+			      </p>
+        </div>
+        <hr>
+        <h2 class="title is-4">Quantitative Comparison</h2>
+        <div class="content has-text-justified">
+            <p>
+              
+            </p>
+        </div>
+            <div class="box m-5">
+                <div class="content has-text-centered">
+                    <img src="static/image/Table1.png" width="100%" alt="Table 1" />
+                </div>
+            </div>
+            <div class="content has-text-justified" style="margin-bottom: 3rem;">
+              <p>
+                Two key insights emerge: good early-stage performance and temporal development.
+                Even with fewer than four observations, <em>OnlineSplatter</em> significantly outperforms all baselines.
+                Over time, a clear divergence appears. Baselines using explicit frame selection often exhibit unstable or stagnant performance. In contrast, <em>OnlineSplatter</em> consistently improves with more observations, as also shown qualitatively below.
+              </p>
+          </div>
+			  <hr>
+        <h2 class="title is-4">Qualiative Comparison</h2>
+          <div class="content has-text-centered results-carousel carousel" style="margin-bottom: 0.3rem;">
+            <div class="item">
+              <img src="static/image/Fig3a.jpg" width="100%" alt="Fig 3a" />
+            </div>
+            <div class="item">
+              <img src="static/image/Fig3b.jpg" width="100%" alt="Fig 3b" />
+            </div>  
+          </div>
+          <div class="content has-text-justified" style="margin-bottom: 3rem;">
+            <p>
+              We find that <em>OnlineSplatter</em> delivers notably better visual quality and geometric accuracy from early to late stages. This underscores the strength of our Object Memory mechanism in leveraging temporal cues for progressive reconstruction refinement.
+            </p>
+          </div>
+          <hr>
+
+          <!-- <h2 class="title is-4">Comparison of Camera Poses</h2>
+          <div class="content has-text-centered">
+            <img src="static/image/pose.png" width="100%" alt="vis" />
+          </div>
+          <div class="content has-text-justified">
+            <p>
+             (<b>Left</b>) We visualize RayZer predicted camera poses learned with self-supervision. We also visualize 3 out of 5 rendered views. The predicted poses correctly capture the camera motion patterns.
+             (<b>Right</b>) At the same time, we find the learned pose space <b>do not exactly match the real-world pose space</b>. As RayZer is built with latent 3D representation, the learned pose space can be compatible with learned scene representation, but is not gauranteed to be geometrically correct.
+             To understand the learned pose space, we probe it by train an prediction MLP using supervised learning (with <b>frozen Camera Encoder initialized by self-supervised pre-training</b>). We also compare with a supervised baseline where both Camera Encoder and prediction MLP are trained from scratch.
+             The result shows that RayZer's learned pose space is meaningful, and <b>RayZer self-supervised novel view synthesis pre-training is more effective than supervised training of pose</b>.
+            </p>
+          </div> -->
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{huang2025onlinesplatter,
+    title={OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects},
+    author={Huang, Mark He and Foo, Lin Geng and Theobalt, Christian and Sun, Ying and Soh, De Wen},
+    booktitle={NeurIPS 2025},
+    year={2025},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <div class="content">
+          <p>
+            This webpage was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page and is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
